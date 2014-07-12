@@ -13,6 +13,7 @@
 		30CA35D61971AC370097C1DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30CA35D41971AC370097C1DA /* Main.storyboard */; };
 		30CA35D81971AC370097C1DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CA35D71971AC370097C1DA /* Images.xcassets */; };
 		30CA35E41971AC370097C1DA /* SwiftClass_TodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CA35E31971AC370097C1DA /* SwiftClass_TodoTests.swift */; };
+		30CA35F01971B4030097C1DA /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA35EF1971B4030097C1DA /* Task.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 		30CA35DD1971AC370097C1DA /* SwiftClass TodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftClass TodoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CA35E21971AC370097C1DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30CA35E31971AC370097C1DA /* SwiftClass_TodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftClass_TodoTests.swift; sourceTree = "<group>"; };
+		30CA35ED1971B4030097C1DA /* SwiftClass Todo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftClass Todo-Bridging-Header.h"; sourceTree = "<group>"; };
+		30CA35EE1971B4030097C1DA /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		30CA35EF1971B4030097C1DA /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +83,13 @@
 			children = (
 				30CA35CE1971AC370097C1DA /* AppDelegate.swift */,
 				30CA35D01971AC370097C1DA /* MasterViewController.swift */,
+				30CA35EE1971B4030097C1DA /* Task.h */,
+				30CA35EF1971B4030097C1DA /* Task.m */,
 				30CA35D21971AC370097C1DA /* DetailViewController.swift */,
 				30CA35D41971AC370097C1DA /* Main.storyboard */,
 				30CA35D71971AC370097C1DA /* Images.xcassets */,
 				30CA35CC1971AC370097C1DA /* Supporting Files */,
+				30CA35ED1971B4030097C1DA /* SwiftClass Todo-Bridging-Header.h */,
 			);
 			path = "SwiftClass Todo";
 			sourceTree = "<group>";
@@ -211,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30CA35F01971B4030097C1DA /* Task.m in Sources */,
 				30CA35D31971AC370097C1DA /* DetailViewController.swift in Sources */,
 				30CA35D11971AC370097C1DA /* MasterViewController.swift in Sources */,
 				30CA35CF1971AC370097C1DA /* AppDelegate.swift in Sources */,
@@ -331,9 +339,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "SwiftClass Todo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftClass Todo/SwiftClass Todo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -342,9 +353,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "SwiftClass Todo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftClass Todo/SwiftClass Todo-Bridging-Header.h";
 			};
 			name = Release;
 		};

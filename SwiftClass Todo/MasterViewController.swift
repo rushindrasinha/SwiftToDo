@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [NSDate]()
+    var objects = [Task]()
 
 
     override func awakeFromNib() {
@@ -41,7 +41,7 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(sender: AnyObject) {
-        objects += NSDate()
+        objects += Task(name: "Buy Milk")
         let indexPath = NSIndexPath(forRow: objects.count - 1, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
@@ -51,7 +51,7 @@ class MasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             let indexPath = self.tableView.indexPathForSelectedRow()
-            let object = objects[indexPath.row] as NSDate
+            let object = objects[indexPath.row]
             ((segue.destinationViewController as UINavigationController).topViewController as DetailViewController).detailItem = object
         }
     }
@@ -69,7 +69,7 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
-        let object = objects[indexPath.row] as NSDate
+        let object = objects[indexPath.row]
         cell.textLabel.text = object.description
         return cell
     }
