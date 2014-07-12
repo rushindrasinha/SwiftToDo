@@ -45,7 +45,7 @@ class MasterViewController: UITableViewController {
             message: "",
             preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler { textField in
-            textField.placeholder = "Buy milk"
+            textField.placeholder = "Add New Task"
         }
         let cancelAction = UIAlertAction(title: "Cancel",
             style: .Default) { action in
@@ -66,6 +66,7 @@ class MasterViewController: UITableViewController {
         let indexPath = NSIndexPath(forRow: objects.count - 1, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
+    
     // #pragma mark - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
